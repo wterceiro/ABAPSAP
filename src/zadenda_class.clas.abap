@@ -21,7 +21,7 @@ ENDCLASS.
 
 
 
-CLASS zadenda_class IMPLEMENTATION.
+CLASS ZADENDA_CLASS IMPLEMENTATION.
 
 
   METHOD if_badi_interface_cust_data_v4~fill_custom_data_v4.

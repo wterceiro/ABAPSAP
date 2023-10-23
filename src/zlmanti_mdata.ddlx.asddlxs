@@ -1,0 +1,72 @@
+@Metadata.layer: #CORE
+@UI: { 
+   headerInfo: { typeName: 'UX Team', 
+                 typeNamePlural: 'UX Team',
+                 title: { type: #STANDARD, label: 'UXTeam', value: 'Docnumber' } },
+                 presentationVariant: [ { sortOrder: [ { by: 'Docnumber', direction: #ASC }] }]
+                 
+}
+annotate view ZLMANT_CView
+    with 
+{
+@UI.facet: [{ id:  'UXDemo',
+              purpose:    #STANDARD,
+              type:       #IDENTIFICATION_REFERENCE,
+              label:      'UXTeam',
+              position:    10  }]
+              
+@UI: { identification: [ { position: 1, label: 'Doc'} ] }
+   Docnumber;
+   
+@UI: { lineItem: [{ position: 20}], 
+        identification: [ { position: 20 }],
+         selectionField: [ { position:20 } ] }  
+         Datadoc;
+         
+@UI: { lineItem: [{ position: 30}], 
+        identification: [ { position: 30 }],
+         selectionField: [ { position:30 } ] }  
+         Curkey;   
+         
+@UI: { lineItem: [{ position: 40}], 
+        identification: [ { position: 40 }],
+         selectionField: [ { position:40 } ] }  
+         Valor;       
+             
+@UI: { lineItem: [{ position: 50}], 
+        identification: [ { position: 50 }],
+         selectionField: [ { position:50 } ] }  
+         Valorimp;            
+
+@UI: { lineItem: [{ position: 60}], 
+        identification: [ { position: 60 }],
+         selectionField: [ { position:60 } ] }  
+         Uuid;
+         
+@UI: { lineItem: [{ position: 70}], 
+        identification: [ { position: 70 }],
+         selectionField: [ { position:70 } ] }  
+         Region;
+         
+@UI: { lineItem: [{ position: 80}], 
+        identification: [ { position: 80 }],
+         selectionField: [ { position:80 } ] }  
+         Age;
+
+@UI: { lineItem: [{ position: 90}], 
+        identification: [ { position: 90 }],
+         selectionField: [ { position:90 } ] }  
+         Active;
+
+@UI: { lineItem: [{ position: 100}], 
+        identification: [ { position: 100 }],
+         selectionField: [ { position:100 } ] }  
+         LastChangedAt; 
+
+@UI: { lineItem: [{ position: 110}], 
+        identification: [ { position: 110 }],
+         selectionField: [ { position:110 } ] }  
+         LocalLastChangedAt; 
+
+               
+}

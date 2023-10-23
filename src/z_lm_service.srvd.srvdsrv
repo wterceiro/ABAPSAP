@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for LM ANticipo Demo'
+define service Z_LM_SERVICE {
+  expose ZLMANT_CView as UXTeam;
+}

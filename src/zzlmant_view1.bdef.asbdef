@@ -1,0 +1,39 @@
+managed; // implementation in class zbp_zlmant_view1 unique;
+//strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZZLMANT_View1 alias UXTeam
+implementation in class zz_i_mant unique
+persistent table zlmantecipo
+lock master
+etag master LocalLastChangedAt
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+    field (numbering: managed, readonly) Id;
+    field (readonly)  Valorimp;
+    field (readonly) LastChangedAt, LocalLastChangedAt;
+
+    action (features: instance) setActive result [1] $self;
+    determination changeValImp on save {field Region;}
+    validation validateAge on save {field Age; create; }
+
+  mapping for zlmantecipo {
+     Id = id;
+     Docnumber = lmdocnumber;
+     Datadoc   = lmdatadoc;
+     Curkey    = cuky_field;
+     Valor     = lmvalorx;
+     Valorimp  = lmvalimp;
+     Uuid      = lmuuid;
+     Region    = region;
+     Age       = age;
+     Active    = active;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}
