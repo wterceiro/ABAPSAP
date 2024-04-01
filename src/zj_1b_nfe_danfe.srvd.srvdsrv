@@ -1,0 +1,4 @@
+@EndUserText.label: 'DANFE Service'
+define service ZJ_1B_NFE_DANFE {
+  expose I_BR_NFeActive;
+}

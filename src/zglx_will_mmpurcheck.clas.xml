@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZSENDMAIL</CLSNAME>
+    <CLSNAME>ZGLX_WILL_MMPURCHECK</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Class to Send Email</DESCRIPT>
+    <DESCRIPT>Valida Pur Req</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

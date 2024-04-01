@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZSENDMAIL</CLSNAME>
+    <CLSNAME>ZDEMO_CALLCLASS_SENDMAIL</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Class to Send Email</DESCRIPT>
+    <DESCRIPT>Call class send email</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
