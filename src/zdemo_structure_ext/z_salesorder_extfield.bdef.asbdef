@@ -1,0 +1,7 @@
+extension using interface i_salesordertp
+implementation in class zbp_salesorder_extfield unique;
+
+extend behavior for SalesOrder {
+
+
+   }

@@ -1,0 +1,126 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'WorkcenterY', 
+    typeNamePlural: 'WorkcenterYs'
+  }
+}
+annotate view ZC_RAP_WRKCENTER_X000 with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'WorkcenterY', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'WorkcenterinternalID'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'WorkcenterinternalID'
+  } ]
+  WorkcenterinternalID;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'Workcentertypecode'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Workcentertypecode'
+  } ]
+  Workcentertypecode;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'Workcenter'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Workcenter'
+  } ]
+  @Search.defaultSearchElement: true
+  Workcenter;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #MEDIUM, 
+    label: 'Costcenter'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Costcenter'
+  } ]
+  @Search.defaultSearchElement: true
+  Costcenter;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #MEDIUM, 
+    label: 'Plant'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Plant'
+  } ]
+  @Search.defaultSearchElement: true
+  Plant;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #MEDIUM, 
+    label: 'Supplyarea'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Supplyarea'
+  } ]
+  Supplyarea;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #MEDIUM, 
+    label: 'Workcenterusage'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Workcenterusage'
+  } ]
+  Workcenterusage;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  Matlcompismarkedforbackflush;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #MEDIUM, 
+    label: 'RatingNum',
+    type: #AS_DATAPOINT
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'RatingNum'
+  } ]
+  @UI.selectionField: [ { position: 20 } ]
+  @UI.dataPoint:
+    {visualization:#RATING,
+     title:'Rating',
+     targetValue:5
+     }
+
+  RatingNum;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

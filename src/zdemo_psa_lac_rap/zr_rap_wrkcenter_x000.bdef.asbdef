@@ -1,0 +1,55 @@
+managed implementation in class ZBP_R_RAP_WRKCENTER_X000000 unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_RAP_WRKCENTER_X000 alias WorkcenterY
+persistent table zrap_wrkcenter_x
+draft table ZRAP_WRKCENTER_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   WorkcenterinternalID,
+   Workcentertypecode;
+
+  field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LastChangedAt,
+   LastChangedBy,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   WorkcenterinternalID,
+   Workcentertypecode;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZRAP_WRKCENTER_X
+  {
+    WorkcenterinternalID = workcenterinternalid;
+    Workcentertypecode = workcentertypecode;
+    Workcenter = workcenter;
+    Costcenter = costcenter;
+    Plant = plant;
+    Supplyarea = supplyarea;
+    Workcenterusage = workcenterusage;
+    Matlcompismarkedforbackflush = matlcompismarkedforbackflush;
+    RatingNum = rating_num;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
