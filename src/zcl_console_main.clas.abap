@@ -18,6 +18,7 @@ METHOD if_oo_adt_classrun~main.
   out->write(  lo_demo->show_data( ) ).
   out->write(  lo_demo->show_data2(  )  ).
   out->write(  lo_demo->show_data3(  ) ).
+  out->write(  lo_demo->show_data4(  ) ).
 endMETHOD.
 
 ENDCLASS.

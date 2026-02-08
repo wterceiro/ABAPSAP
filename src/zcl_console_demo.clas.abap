@@ -3,18 +3,25 @@ CLASS zcl_console_demo DEFINITION
   create public.
   PUBLIC SECTION.
     METHODS: constructor,
-             show_data
+             show_data              "  método public que é acessivel por outras classes :  retorna a soma dos valores protected e private
              retURNING VALUE(lv_result) type i,
-             show_data2
+             show_data2             "  método public que é acessível por outras classes : retorna um campo chamdo protected_value que é definido aqui,
+                                    "  por isso ele é um campo Public.
              returninG VALUE(protected_value) tYPE string,
              show_data3
-             retURNING VALUE(lv_result3) type i.
+             retURNING VALUE(lv_result3) type i, " método public que é acessível por outras classes : retorna o valor protected "protected_value"
+                                                 " definido na sessao protected através do método protected show_data_prot
+             show_data4
+             retURNING VALUE(lv_result4) type i. " método public que é acessível por outras classes : retorna o valor Private "private_value"
+                                                 " definido na sessao Private através do método private show_data_private
   PROTECTED SECTION.
     DATA: protected_value TYPE i.
     METHODS: show_data_prot
              returNING VALUE(lv_result_prot) type i.
   PRIVATE SECTION.
     DATA: private_value TYPE i.
+    METHODS: show_data_private
+             returNING VALUE(lv_result_private) type i.
 ENDCLASS.
 
 CLASS zcl_console_demo IMPLEMENTATION.
@@ -42,7 +49,9 @@ CLASS zcl_console_demo IMPLEMENTATION.
      lv_result3 = me->show_data_prot(  ).
   ENDMETHOD.
 
-
+  METHOD show_data4.
+     lv_result4 = me->show_data_private(  ).
+  ENDMETHOD.
 
   METHOD show_data_prot.
 * Esse método Protected, seta o valor do campo definido na sessão protected com valor 500 e retorna como resulado ls_result_prot que também é protected
@@ -51,4 +60,13 @@ CLASS zcl_console_demo IMPLEMENTATION.
     protected_value = 500.
     lv_result_prot = protected_value.
   ENDMETHOD.
+
+    METHOD show_data_private.
+* Esse método Private, seta o valor do campo definido na sessão Private com valor 700 e retorna como resulado ls_result_private que também é private
+* somente métodos na sessão public conseguem acessar esse valor.
+* no caso do show_data4, metodo public, eu obtive atraves do metodo private show_data_private, o valor e retornei ele para o programa da console.
+    private_value = 700.
+    lv_result_private = private_value.
+  ENDMETHOD.
+
 ENDCLASS.
